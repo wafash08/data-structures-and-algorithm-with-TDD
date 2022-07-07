@@ -1,0 +1,25 @@
+{
+  "name": "data-structures-and-algorithm-tdd",
+  "version": "1.0.0",
+  "description": "Belajar Data Structures and Algorithms dengan metode Test Driven Development",
+  "main": "./src/index.js",
+  "type": "module",
+  "scripts": {
+    "test": "jest"
+  },
+  "jest": {
+    "maxConcurrency": 2,
+    "verbose": true,
+    "transform": {
+      "^.+\\.[t|j]sx?$": "babel-jest"
+    }
+  },
+  "author": "wafasaefulhaq",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.18.6",
+    "@babel/preset-env": "^7.18.6",
+    "babel-jest": "^28.1.2",
+    "jest": "^28.1.2"
+  }
+}
