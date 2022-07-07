@@ -102,38 +102,28 @@ describe("Linked List", () => {
     });
   });
 
-  // describe("this.head", () => {
-  //   it("should return null when reading head of newly initialized linkedlist", () => {
-  //     const linkedList = new LinkedList();
+  describe("this.indexOf", () => {
+    it("should return index 0 when searching 'a'", () => {
+      const linkedList = new LinkedList();
+      linkedList.insertFirst("a");
 
-  //     expect(linkedList.head()).toBe(null);
-  //   });
-  // });
+      expect(linkedList.indexOf("a")).toBe(0);
+    });
 
-  // describe("this.append", () => {
-  //   it("should add data to the head of empty linkedlist", () => {
-  //     const linkedList = new LinkedList();
-  //     linkedList.append("a");
+    it("should return index 1 when searching 'b'", () => {
+      const linkedList = new LinkedList();
+      linkedList.insertFirst("a");
+      linkedList.insertAt("b", 1);
 
-  //     expect(linkedList.head()).toBe("a");
-  //   });
+      expect(linkedList.indexOf("b")).toBe(1);
+    });
 
-  //   it("should add data to the last of existing linkedlist", () => {
-  //     const linkedList = new LinkedList();
-  //     linkedList.append("a");
-  //     linkedList.append("b");
+    it("should return undefined when searching element that does not exist", () => {
+      const linkedList = new LinkedList();
+      linkedList.insertFirst("a");
+      linkedList.insertAt("b", 1);
 
-  //     expect(linkedList.head()).toBe("a");
-  //     expect(linkedList.size()).toBe(2);
-  //   });
-  // });
-
-  // describe("this.size", () => {
-  //   it("should return the length of linkedlist", () => {
-  //     const linkedList = new LinkedList();
-  //     linkedList.append("a");
-
-  //     expect(linkedList.size()).toBe(1);
-  //   });
-  // });
+      expect(linkedList.indexOf("w")).toBe(null);
+    });
+  });
 });
