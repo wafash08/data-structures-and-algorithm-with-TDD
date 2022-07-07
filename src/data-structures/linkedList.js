@@ -95,19 +95,27 @@ export default class LinkedList {
     return null;
   }
 
-  // head() {
-  //   return this.headNode?.data || null;
-  // }
+  deleteHead() {
+    const removedNode = this.headNode;
+    if (this.length > 0) {
+      this.headNode = this.headNode.nextNode;
+      this.length--;
+    }
+    return removedNode?.data;
+  }
 
-  // append(data) {
-  //   if (this.headNode === null) {
-  //     this.headNode = new Node(data);
-  //   }
+  deleteTail() {
+    let currentIndex = 0;
+    let currentNode = this.headNode;
 
-  //   this.length++;
-  // }
+    while (currentIndex < this.length - 2) {
+      currentNode = currentNode.nextNode;
+      currentIndex++;
+    }
 
-  // size() {
-  //   return this.length;
-  // }
+    const removedNode = currentNode.nextNode;
+    currentNode.next = null;
+    this.length--;
+    return removedNode.data;
+  }
 }
