@@ -143,20 +143,14 @@ describe("Linked List", () => {
       expect(linkedList.deleteTail()).toBe("b");
     });
 
-    // it("should return index 1 when searching 'b'", () => {
-    //   const linkedList = new LinkedList();
-    //   linkedList.insertFirst("a");
-    //   linkedList.insertAt("b", 1);
+    it("should return 'b' when deleting 'b'", () => {
+      const linkedList = new LinkedList();
+      linkedList.insertFirst("a");
+      linkedList.insertAt("b", 1);
+      linkedList.insertLast("c");
+      linkedList.deleteAt(1);
 
-    //   expect(linkedList.indexOf("b")).toBe(1);
-    // });
-
-    // it("should return undefined when searching element that does not exist", () => {
-    //   const linkedList = new LinkedList();
-    //   linkedList.insertFirst("a");
-    //   linkedList.insertAt("b", 1);
-
-    //   expect(linkedList.indexOf("w")).toBe(null);
-    // });
+      expect(linkedList.readAt(1)).toBe("c");
+    });
   });
 });
