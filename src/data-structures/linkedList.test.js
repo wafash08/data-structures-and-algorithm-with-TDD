@@ -153,5 +153,27 @@ describe("Linked List", () => {
       expect(linkedList.readAt(1)).toBe("c");
       expect(linkedList.length).toBe(2);
     });
+
+    it("should return null when deleting 'w'", () => {
+      const linkedList = new LinkedList();
+      linkedList.insertFirst("a");
+      linkedList.insertAt("b", 1);
+      linkedList.insertLast("c");
+
+      expect(linkedList.delete("w")).toBe(null);
+      expect(linkedList.readAt(1)).toBe("b");
+      expect(linkedList.length).toBe(3);
+    });
+
+    it("should return 'b' when deleting 'b'", () => {
+      const linkedList = new LinkedList();
+      linkedList.insertFirst("a");
+      linkedList.insertAt("b", 1);
+      linkedList.insertLast("c");
+
+      expect(linkedList.delete("b")).toBe("b");
+      expect(linkedList.readAt(1)).toBe("c");
+      expect(linkedList.length).toBe(2);
+    });
   });
 });

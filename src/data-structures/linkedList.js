@@ -140,4 +140,24 @@ export default class LinkedList {
     this.length--;
     return removedNode.data;
   }
+
+  delete(value) {
+    let currentNode = this.headNode;
+    let removedNode = null;
+
+    if (currentNode.data === value) return this.deleteHead();
+
+    while (currentNode?.nextNode) {
+      if (currentNode.nextNode.data === value) {
+        removedNode = currentNode.nextNode;
+        currentNode.nextNode = currentNode.nextNode.nextNode;
+        this.length--;
+        break;
+      }
+
+      currentNode = currentNode.nextNode;
+    }
+
+    return removedNode?.data || null;
+  }
 }
