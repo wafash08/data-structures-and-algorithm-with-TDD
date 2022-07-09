@@ -120,6 +120,9 @@ export default class LinkedList {
   }
 
   deleteAt(index) {
+    if (index > this.length || index < 0) {
+      throw new RangeError("Out of range index");
+    }
     if (index === 0) return this.deleteHead();
 
     if (index === this.length) return this.deleteTail();

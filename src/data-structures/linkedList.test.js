@@ -154,6 +154,17 @@ describe("Linked List", () => {
       expect(linkedList.length).toBe(2);
     });
 
+    it("should throw an error message 'Out of range index' when deleting data at out of range index", () => {
+      const linkedList = new LinkedList();
+      linkedList.insertAt("w", 0);
+      expect(() => {
+        linkedList.deleteAt(2);
+      }).toThrow(RangeError);
+      expect(() => {
+        linkedList.deleteAt(2);
+      }).toThrow("Out of range index");
+    });
+
     it("should return null when deleting 'w'", () => {
       const linkedList = new LinkedList();
       linkedList.insertFirst("a");
