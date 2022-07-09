@@ -100,6 +100,17 @@ describe("Linked List", () => {
 
       expect(linkedList.readAt(1)).toBe("b");
     });
+
+    it("should throw an error message 'Out of range index' when reading data at out of range index", () => {
+      const linkedList = new LinkedList();
+      linkedList.insertFirst("a");
+      expect(() => {
+        linkedList.readAt(1);
+      }).toThrow(RangeError);
+      expect(() => {
+        linkedList.readAt(1);
+      }).toThrow("Out of range index");
+    });
   });
 
   describe("this.indexOf", () => {

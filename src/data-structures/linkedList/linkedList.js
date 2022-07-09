@@ -68,6 +68,9 @@ export default class LinkedList {
   }
 
   readAt(index) {
+    if (index > this.length - 1 || index < 0) {
+      throw new RangeError("Out of range index");
+    }
     let currentIndex = 0;
     let currentNode = this.headNode;
 
@@ -76,7 +79,7 @@ export default class LinkedList {
       currentIndex++;
     }
 
-    return currentNode.data;
+    return currentNode?.data || null;
   }
 
   indexOf(value) {
