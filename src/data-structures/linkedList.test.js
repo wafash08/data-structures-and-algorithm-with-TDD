@@ -143,14 +143,15 @@ describe("Linked List", () => {
       expect(linkedList.deleteTail()).toBe("b");
     });
 
-    it("should return 'b' when deleting 'b'", () => {
+    it("should return 'b' and read index 1 to be 'c' when deleting 'b'", () => {
       const linkedList = new LinkedList();
       linkedList.insertFirst("a");
       linkedList.insertAt("b", 1);
       linkedList.insertLast("c");
-      linkedList.deleteAt(1);
 
+      expect(linkedList.deleteAt(1)).toBe("b");
       expect(linkedList.readAt(1)).toBe("c");
+      expect(linkedList.length).toBe(2);
     });
   });
 });
